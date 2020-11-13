@@ -1,3 +1,5 @@
+let maplocalleader=" " "change local leader to space.
+
 " Specify a directory for plugins
 " to source, so ~/.vimrc
 " to install, PlugInstall
@@ -34,7 +36,6 @@ call plug#end()
 set number
 "set number relativenumber "enable relative number lines
 set modifiable "allow buffer to be modifiable
-
 "turn hightlighting off after search
 ":noh
 
@@ -49,7 +50,7 @@ let g:pandoc#modules#disabled = ["spell"]
 let R_openpdf = 0
 
 " enable ncm2 for all buffers
- autocmd BufEnter * call ncm2#enable_for_buffer()
+autocmd BufEnter * call ncm2#enable_for_buffer()
 " IMPORTANT: :help Ncm2PopupOpen for more information
 set completeopt=noinsert,menuone,noselect
 "autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
@@ -61,13 +62,13 @@ set shortmess+=c
 " When the <Enter> key is pressed while the popup menu is visible, it only
 " hides the menu. Use this mapping to close the menu and also start a new    
 " line.
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+"inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 " Use <TAB> to select the popup menu:
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"    
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "NvimR options
 let R_rconsole_width = winwidth(0)/3 "divide sceen by three
-let Rout_more_colors = 1 "more output color
+"let Rout_more_colors = 1 "more output color
 
 
