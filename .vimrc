@@ -29,28 +29,60 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-path'
 call plug#end()
 
-"ayu theme settings
-set termguicolors     " enable true colors support
-let ayucolor="dark" " for mirage version of theme
-colorscheme ayu
 
-set number relativenumber "enable relative number lines
-set modifiable "allow buffer to be modifiable
+""" Terminal Looks
+	"ayu theme settings
+	set termguicolors     " enable true colors support
+	let ayucolor="dark" " for mirage version of theme
+	colorscheme ayu
 
-"highlight search when using * to find next occurance 
-"turn hightlighting off after search
-":noh
-set hlsearch
+	set number relativenumber "enable relative number lines
+	set modifiable "allow buffer to be modifiable
 
-filetype plugin on "turn on filetype plugin for files in .vim/ftplugin/*
-syntax on "code highlighting
-let g:tex_flavor='latex'
+	"escape from terminal to normal mode
+	if has('nvim')
+		  :tnoremap <C-w> <C-\><C-n><C-w>
+	  endif
 
+	"highlight search when using * to find next occurance 
+	"turn hightlighting off after search
+	":noh
+	set hlsearch
+	"folding
+	let r_syntax_folding=1
+	set nofoldenable
+	set foldmethod=indent
+	" set foldmethod=marker
+	" set foldmarker=```,```
+	set tabstop=4 "how many spaces should vim take <tab> to be
+	set shiftwidth=4 "indent width
+	set softtabstop=4 "number of columns per tab?
+	set expandtab "make tabs, spaces
+"""
+
+""" vimtex options
+	filetype plugin on "turn on filetype plugin for files in .vim/ftplugin/*
+	syntax on "code highlighting
+	let g:tex_flavor='latex'
+	let g:vimtex_fold_enabled=1
+	let g:vimtex_fold_types = {
+				\ 'envs' : {'whitelist' : ['algorithm'], 'blacklist' : ['figure','align']},
+				\ 'comments' : {'enable' : 1}, 
+				\ 'sections' : {'sections' : ['section','subsection','subsubsection']}
+				\}
+	"setlocal spell
+	let g:tex_flavor = 'latex'
+	"linting 
+	"execute 'packadd ale'
+	"let b:ale_fixers = ['remove_trailing_lines',  'trim_whitespace']
+	"let b:ale_linters = ['chktex']
+"""
 
 "keep pandoc from hiding my shit. 
 let g:pandoc#syntax#conceal#use = 0
 let g:pandoc#modules#disabled = ["spell"]
 let R_openpdf = 0
+let g:pandoc#modules#enabled = ["folding"]  
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
