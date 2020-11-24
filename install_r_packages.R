@@ -7,13 +7,14 @@ ipak <- function(pkg){
   if (length(new.pkg)) 
     install.packages(new.pkg,
                      dependencies = TRUE,
-                     repos = "https://cran.revolutionanalytics.com")
+                     repos = "https://mirror.las.iastate.edu/CRAN/")
   sapply(pkg, require, character.only = TRUE)
 }
 
 # usage
 packages <- c("plyr", #rbind.fill??
               "RColorBrewer", "scales", "grid","latex2exp", #graphing aid packages
+              "txtplot", #textplotting in a terminal when you don't have X11
               "data.table","RSQLite", #data management
               "shiny", "leaflet", #shiny related packages
               "caret", "glmnet","rms", #machine learning/statistical learning
