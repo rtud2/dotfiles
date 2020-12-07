@@ -38,6 +38,7 @@ call plug#end()
 
 	set number relativenumber "enable relative number lines
 	set modifiable "allow buffer to be modifiable
+    set hidden
 
 	"escape from terminal to normal mode
 	if has('nvim')
@@ -118,6 +119,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "NvimR options
 let R_rconsole_width = winwidth(0)/3 "divide sceen by three
-"let Rout_more_colors = 1 "more output color
+let R_assign = 0 "turn-off the _ = <-
+let Rout_more_colors = 1 "more output color
 
 
