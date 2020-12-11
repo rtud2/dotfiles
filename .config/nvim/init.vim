@@ -38,12 +38,20 @@ call plug#end()
 
 	set number relativenumber "enable relative number lines
 	set modifiable "allow buffer to be modifiable
-    set hidden
+    set hidden "allow buffer to switch even when not written
+    set equalalways "split the same all the time
+    set splitbelow splitright "natural splitting when splitting windwows
+    
 
 	"escape from terminal to normal mode
 	if has('nvim')
-		  :tnoremap <C-w> <C-\><C-n><C-w>
-	  endif
+	  :tnoremap <C-w> <C-\><C-n>
+	endif
+    "remap ctrl JKLH for window mode
+    nnoremap <C-J> <C-w><C-J>
+    nnoremap <C-K> <C-w><C-K>
+    nnoremap <C-L> <C-w><C-L>
+    nnoremap <C-H> <C-w><C-H>
 
 	"highlight search when using * to find next occurance 
 	"turn hightlighting off after search
