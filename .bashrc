@@ -118,22 +118,22 @@ fi
 
 
 # Windows Home Directory 
-WINHOME=/mnt/c/Users/torob/
-UCA=/mnt/c/Users/torob/Desktop/Residual-Dimension-Reduction/
-
-# using ubuntu to call on window stuff
-alias start='cmd.exe /C start'
-
-# X11 Server
-export DISPLAY=localhost:0.0
-
-#check if vcxsrv is running, if not, spin up X11 server
-if pgrep -x "vcxsrv.exe" > /dev/null
-then
-    echo "vcxsrv is already running"
-else
-    echo "starting up vcxsrv for x11"
-    "/mnt/c/Program Files/VcXsrv/vcxsrv.exe" :0 -clipboard -multiwindow -wgl > /dev/null 2>&1 &
-fi
+# WINHOME=/mnt/c/Users/torob/
+# UCA=/mnt/c/Users/torob/Desktop/Residual-Dimension-Reduction/
+# 
+# # using ubuntu to call on window stuff
+# alias start='cmd.exe /C start'
+# 
+# # X11 Server
+# export DISPLAY=localhost:0.0
+# 
+# #check if vcxsrv is running, if not, spin up X11 server
+# if pgrep -x "vcxsrv.exe" > /dev/null
+# then
+#     echo "vcxsrv is already running"
+# else
+#     echo "starting up vcxsrv for x11"
+#     "/mnt/c/Program Files/VcXsrv/vcxsrv.exe" :0 -clipboard -multiwindow -wgl > /dev/null 2>&1 &
+# fi
 
 
