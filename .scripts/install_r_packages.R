@@ -13,11 +13,11 @@ ipak <- function(pkg){
 
 # usage
 packages <- c("plyr", #rbind.fill??
-              "RColorBrewer", "scales", "grid","latex2exp", #graphing aid packages
+              "RColorBrewer", "scales", "grid", "latex2exp", #graphing aid packages
               "txtplot", #textplotting in a terminal when you don't have X11
-              "data.table","RSQLite", #data management
+              "data.table", "RSQLite", #data management
               "shiny", "leaflet", #shiny related packages
-              "caret", "glmnet","rms", #machine learning/statistical learning
+              "caret", "glmnet", "rms", #machine learning/statistical learning
               "Rcpp", "RcppEigen", "RcppArmadillo", #Rcpp and variants
               "RSpectra", "Rfast", #fast linear algebra packages and optimized functions
           		"roxygen2",  "devtools", #package development
@@ -29,12 +29,3 @@ packages <- c("plyr", #rbind.fill??
 		)
 ipak(packages)
 
-
-# bioconductor install
-# if (!requireNamespace("BiocManager"))
-#   install.packages("BiocManager")
-# BiocManager::install()
-# 
-# BiocManager::install(c("GenomicFeatures", "AnnotationDbi", "ChAMP", "GenomicRanges", "rtracklayer", "TxDb.Hsapiens.UCSC.hg38.knownGene"))
-# BiocManager::install(c("TxDb.Hsapiens.UCSC.hg19.knownGene"))
-# BiocManager::install("IlluminaHumanMethylation450kanno.ilmn12.hg19", version = "3.8")
