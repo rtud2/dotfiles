@@ -12,21 +12,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'} "code completion
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'} "R ide
-Plug 'ncm2/ncm2' "neovim layer for vim
-Plug 'roxma/nvim-yarp' "completion manager
-Plug 'gaalcaras/ncm-R' "code completion
 Plug 'lervag/vimtex' "for tex
 Plug 'ayu-theme/ayu-vim' "theme
 Plug 'dense-analysis/ale' "linting
 Plug 'habamax/vim-sendtoterm' "send to terminal
-"Plug 'vim-pandoc/vim-rmarkdown' "rmd code highlighting
 Plug 'vim-pandoc/vim-pandoc-syntax' "rmd code highlighting
 Plug 'vim-pandoc/vim-pandoc' "rmd code highlighting 
 Plug 'tpope/vim-surround' "surround in quotes
 Plug 'tpope/vim-repeat' "add repeatability to vim surround
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-path'
 call plug#end()
 
 
@@ -41,6 +36,10 @@ call plug#end()
     set hidden "allow buffer to switch even when not written
     set equalalways "split the same all the time
     set splitbelow splitright "natural splitting when splitting windwows
+
+    "netrw settings
+    let g:netrw_banner=0
+    let g:netrw_liststyle=3
     
 
 	"escape from terminal to normal mode
@@ -107,15 +106,6 @@ let g:pandoc#modules#disabled = ["spell"]
 let R_openpdf = 0
 let g:pandoc#modules#enabled = ["folding"]  
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-"autocmd BufWritePost *.tex silent! execute "!pdflatex % >/dev/null 2>&1" | redraw!
-"
-" ncm-option 
-" suppress the annoying 'match x of y', 'The only match' and 'Pattern not found' messages
-set shortmess+=c
 
 " When the <Enter> key is pressed while the popup menu is visible, it only
 " hides the menu. Use this mapping to close the menu and also start a new    
